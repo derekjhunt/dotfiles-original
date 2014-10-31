@@ -5,6 +5,11 @@ if [ -f ~/bin/git-prompt.sh ]; then
        . ~/bin/git-prompt.sh
 fi
 
+# drush aliases
+if [ -f ~/.drush_bashrc ] ; then
+        . ~/.drush_bashrc
+fi
+
 # git commamands simplified
 alias gst='git status'
 alias gco='git checkout'
