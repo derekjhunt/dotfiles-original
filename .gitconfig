@@ -1,0 +1,4 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Derek J. Hunt
+	email = derek.hunt@gmail.com
