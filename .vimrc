@@ -5,7 +5,7 @@
 set nocompatible                "cp:    turns off strct vi compatibility
 filetype plugin indent on
 
-call pathogen#infect()
+"call pathogen#infect()
 
 " Search {{{
 
@@ -38,8 +38,8 @@ set showmatch                   "sm:    flashes matching brackets or parentheses
 set nobackup                    "bk:    does not write a persistent backup file of an edited file
 set writebackup                 "wb:    does keep a backup file while editing a file
 
-set undofile                    "udf:   persist the undo tree to a file; dir below will not be auto-created
-set undodir=$HOME/.vim/undodir,.
+"set undofile                    "udf:   persist the undo tree to a file; dir below will not be auto-created
+"set undodir=$HOME/.vim/undodir,.
 set directory=$HOME/.vim/swapdir,.
 
 " Searches the current directory as well as subdirectories with commands like :find, :grep, etc.
@@ -522,23 +522,16 @@ let g:tagbar_iconchars = ['+', '-']
 " fit an 80-column window (plus eight for line numbers and the fold column).
 if &columns > 118
     if ! &diff
-        au VimEnter * nested :call tagbar#autoopen(1)
+"        au VimEnter * nested :call tagbar#autoopen(1)
     endif
 else
     let g:tagbar_autoclose = 1
     let g:tagbar_autofocus = 1
 endif
 
-""" Airline settings
-" let g:airline_powerline_fonts = 1
-let g:airline_detect_whitespace = 2
-let g:airline_whitespace_symbol = 'Ξ'
-let g:airline_linecolumn_prefix = '␊ '
-let g:airline_left_sep = '▞'
-let g:airline_right_sep = '▚'
-" Add the alternate buffer name next to the current file name
-let g:airline_section_c = "%f%m %{bufname('#') != '' ? '('. expand('#:t') .')' : ''}"
-
+set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim/ 
+set laststatus=2
+set t_Co=256
 " Dispatch mappings
 nmap <silent> <leader>b :Make!<cr>
 
